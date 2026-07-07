@@ -5,7 +5,7 @@ A small production-style ML platform: Dockerized MySQL for storage, a reusable p
 | Service | URL |
 |---|---|
 | Streamlit | https://elvin-aliyev-census-income-streamlit.hf.space |
-| FastAPI | https://elvin-aliyev-census-income-api.hf.space/predict |
+| FastAPI | https://elvin-aliyev-census-income-api.hf.space/docs |
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)

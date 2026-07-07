@@ -21,8 +21,7 @@ A production-style ML platform built around the Adult Census dataset. Instead of
 ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?logo=pydantic&logoColor=white)
 
 ## Why this exists
-
-Most public repos built around the Adult Census dataset stop at a notebook with a `.fit()` call and a printed accuracy score. This one treats the notebook as the research phase and everything after it as a separate concern: once a preprocessing decision or a model is validated in `ml.ipynb`, it gets pulled out into a module that both the training script and — indirectly — the API depend on. Nothing that runs in production lives only in a notebook cell.
+Most public repos stop at a notebook `.fit()` call and an accuracy score. This project treats the notebook strictly as a research phase; once validated, preprocessing and modeling choices are refactored into independent, production-ready modules. Nothing that runs in production lives only in a notebook cell.
 
 ## Architecture
 

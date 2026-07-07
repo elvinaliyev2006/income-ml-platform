@@ -114,7 +114,8 @@ Accuracy 0.88, ROC-AUC 0.92. Class 1 metrics are weaker mainly because of class 
 │   ├── database.py            
 │   └── load_data.py         
 ├── dataset/                   
-├── edatoolkit/               
+├── edatoolkit/
+│   └── edatoolkit            
 ├── fastapi_app/
 │   └── fastapi_app.py
 ├── notebooks/

@@ -21,11 +21,8 @@ Most public repos built around the Adult Census dataset stop at a notebook with 
 
 ## Architecture
 
-<<<<<<< HEAD
-![Workflow](workflof_diagram/ml_pipeline_workflow_.svg)
-=======
 ![Workflow](workflow_diagram/ml_pipeline_workflow%20.svg)
->>>>>>> d9a7335 (income-ml-platform)
+
 
 
 

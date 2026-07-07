@@ -111,18 +111,18 @@ Accuracy 0.88, ROC-AUC 0.92. Class 1 metrics are weaker mainly because of class 
 ```
 .
 ├── database/
-│   ├── database.py            # SQLAlchemy connection manager
-│   └── load_data.py           # loads the raw CSV into MySQL
-├── dataset/                   # raw CSV (adult.csv)
-├── edatoolkit/                # EDA package used in the notebooks
+│   ├── database.py            
+│   └── load_data.py         
+├── dataset/                   
+├── edatoolkit/               
 ├── fastapi_app/
 │   └── fastapi_app.py
 ├── notebooks/
 │   ├── eda.ipynb
 │   └── ml.ipynb
 ├── requirements/
-│   ├── requirements-api.txt   # slim set for the Docker image
-│   └── requirements.txt       # full dev environment
+│   ├── requirements-api.txt   
+│   └── requirements.txt       
 ├── streamlit_app/
 │   └── streamlit_app.py
 ├── workflow_diagram/

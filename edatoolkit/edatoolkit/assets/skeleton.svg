@@ -1,0 +1,227 @@
+<svg width="100%" viewBox="0 0 780 820" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes connDraw {
+      from { stroke-dashoffset: 40; opacity: 0; }
+      to   { stroke-dashoffset: 0;  opacity: 1; }
+    }
+    @keyframes flow {
+      from { stroke-dashoffset: 24; }
+      to   { stroke-dashoffset: 0; }
+    }
+    @keyframes flowAmber {
+      from { stroke-dashoffset: 24; }
+      to   { stroke-dashoffset: 0; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .cls-box  { animation: fadeSlideIn 0.4s ease both; }
+      .cls-conn { animation: connDraw 0.35s ease both; }
+      .flow-line       { animation: connDraw 0.35s ease both, flow 1.2s linear infinite; }
+      .flow-line-amber { animation: connDraw 0.35s ease both, flowAmber 1.2s linear infinite; }
+    }
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1a1a1a; }
+    .th  { font-size: 13px; font-weight: 600; }
+    .ts  { font-size: 11px; font-weight: 400; fill: #555; }
+
+    .cls-box-1  { animation-delay: 0.05s; }
+    .cls-box-2  { animation-delay: 0.15s; }
+    .cls-box-3  { animation-delay: 0.25s; }
+    .cls-box-4  { animation-delay: 0.35s; }
+    .cls-box-5  { animation-delay: 0.45s; }
+    .cls-box-6  { animation-delay: 0.55s; }
+    .cls-box-7  { animation-delay: 0.65s; }
+    .cls-box-8  { animation-delay: 0.75s; }
+    .cls-box-9  { animation-delay: 0.85s; }
+    .cls-box-10 { animation-delay: 0.95s; }
+    .cls-box-11 { animation-delay: 1.05s; }
+    .cls-box-12 { animation-delay: 1.15s; }
+    .cls-box-13 { animation-delay: 1.25s; }
+
+    /* flow lines — each offset so the pulse ripples down in order */
+    .fl-1  { stroke-dasharray: 6 6; animation-delay: 0.18s; }
+    .fl-2  { stroke-dasharray: 6 6; animation-delay: 0.28s; }
+    .fl-3  { stroke-dasharray: 6 6; animation-delay: 0.38s; }
+    .fl-4  { stroke-dasharray: 6 6; animation-delay: 0.48s; }
+    .fl-5  { stroke-dasharray: 6 6; animation-delay: 0.58s; }
+    .fl-6  { stroke-dasharray: 6 6; animation-delay: 0.68s; }
+    .fl-7  { stroke-dasharray: 6 6; animation-delay: 0.78s; }
+    .fl-8  { stroke-dasharray: 6 6; animation-delay: 0.88s; }
+    .fl-9  { stroke-dasharray: 6 6; animation-delay: 0.98s; }
+    .fl-a1 { stroke-dasharray: 6 6; animation-delay: 0.48s; }
+    .fl-a2 { stroke-dasharray: 6 6; animation-delay: 0.58s; }
+    .fl-a3 { stroke-dasharray: 6 6; animation-delay: 0.68s; }
+  </style>
+
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- background -->
+<rect width="780" height="820" fill="#ffffff" rx="12"/>
+
+<!-- ══════════════════════════════════════════════
+     EDA  (top centre)
+     ══════════════════════════════════════════════ -->
+<g class="cls-box cls-box-1">
+  <rect x="224" y="20" width="332" height="68" rx="12" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.8"/>
+  <text class="th" x="390" y="50" text-anchor="middle" dominant-baseline="central" fill="#26215C">EDA  (Facade)</text>
+  <text class="ts" x="390" y="70" text-anchor="middle" dominant-baseline="central" fill="#534AB7">dataframe · target_col · cat_th · car_th · alpha</text>
+</g>
+
+<!-- ══════════════════════════════════════════════
+     State attributes row
+     ══════════════════════════════════════════════ -->
+<g class="cls-box cls-box-2">
+  <rect x="30" y="136" width="190" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="th" x="125" y="152" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">cat_cols</text>
+  <text class="ts" x="125" y="168" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">num_but_cat · cat_but_car</text>
+</g>
+<g class="cls-box cls-box-3">
+  <rect x="245" y="136" width="190" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="th" x="340" y="152" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">num_cols</text>
+  <text class="ts" x="340" y="168" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">auto-classified on init</text>
+</g>
+<g class="cls-box cls-box-4">
+  <rect x="460" y="136" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="0.5"/>
+  <text class="th" x="560" y="152" text-anchor="middle" dominant-baseline="central" fill="#2C2C2A">num_summary_df</text>
+  <text class="ts" x="560" y="168" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">set via num_summary()</text>
+</g>
+
+<!-- state connectors — flow lines -->
+<line class="flow-line fl-1" x1="390" y1="88" x2="125" y2="136" stroke="#ccc" stroke-width="0.9" fill="none" marker-end="url(#arr)"/>
+<line class="flow-line fl-2" x1="390" y1="88" x2="340" y2="136" stroke="#ccc" stroke-width="0.9" fill="none" marker-end="url(#arr)"/>
+<line class="flow-line fl-3" x1="390" y1="88" x2="560" y2="136" stroke="#ccc" stroke-width="0.9" fill="none" marker-end="url(#arr)"/>
+
+<!-- ── Section divider ── -->
+<text class="ts" x="30" y="218" fill="#aaa">methods</text>
+<line x1="80" y1="213" x2="750" y2="213" stroke="#ddd" stroke-width="0.5"/>
+
+<!-- ══════════════════════════════════════════════
+     Row 1 — Inspector
+     ══════════════════════════════════════════════ -->
+<g class="cls-box cls-box-5">
+  <rect x="30" y="226" width="210" height="52" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="th" x="135" y="246" text-anchor="middle" dominant-baseline="central" fill="#04342C">check_dataframe()</text>
+  <text class="ts" x="135" y="264" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">head · shape · NA · dupes</text>
+</g>
+<g class="cls-box cls-box-5">
+  <rect x="258" y="226" width="210" height="52" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="th" x="363" y="246" text-anchor="middle" dominant-baseline="central" fill="#04342C">get_columns_types()</text>
+  <text class="ts" x="363" y="264" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">cat · num · num_but_cat · car</text>
+</g>
+<g class="cls-box cls-box-5">
+  <rect x="486" y="226" width="264" height="52" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text class="th" x="618" y="246" text-anchor="middle" dominant-baseline="central" fill="#04342C">update_dataframe()</text>
+  <text class="ts" x="618" y="264" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">re-runs column classification</text>
+</g>
+
+<!-- ══════════════════════════════════════════════
+     Row 2 — NormalityAnalyzer
+     ══════════════════════════════════════════════ -->
+<g class="cls-box cls-box-6">
+  <rect x="30" y="316" width="210" height="52" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.8"/>
+  <text class="th" x="135" y="336" text-anchor="middle" dominant-baseline="central" fill="#412402">descriptive_analysis()</text>
+  <text class="ts" x="135" y="354" text-anchor="middle" dominant-baseline="central" fill="#854F0B">CV% · skew · kurtosis</text>
+</g>
+<g class="cls-box cls-box-7">
+  <rect x="258" y="316" width="210" height="52" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.8"/>
+  <text class="th" x="363" y="336" text-anchor="middle" dominant-baseline="central" fill="#412402">check_num()</text>
+  <text class="ts" x="363" y="354" text-anchor="middle" dominant-baseline="central" fill="#854F0B">Q-Q · Shapiro / D'Agostino</text>
+</g>
+<g class="cls-box cls-box-8">
+  <rect x="486" y="316" width="264" height="52" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.8"/>
+  <text class="th" x="618" y="336" text-anchor="middle" dominant-baseline="central" fill="#412402">num_summary()</text>
+  <text class="ts" x="618" y="354" text-anchor="middle" dominant-baseline="central" fill="#854F0B">sets num_summary_df · Normal / Non-normal</text>
+</g>
+
+<!-- req badge between check_num → num_summary -->
+<line class="flow-line-amber fl-a1" x1="468" y1="342" x2="486" y2="342" stroke="#BA7517" stroke-width="1.2" fill="none" marker-end="url(#arr-amber)"/>
+<text class="ts" x="477" y="334" text-anchor="middle" fill="#BA7517">req</text>
+
+<!-- ══════════════════════════════════════════════
+     Row 3 — OutlierAnalyzer + CategoricalAnalyzer
+     ══════════════════════════════════════════════ -->
+<g class="cls-box cls-box-9">
+  <rect x="30" y="416" width="336" height="52" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text class="th" x="198" y="436" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">check_outlier()</text>
+  <text class="ts" x="198" y="454" text-anchor="middle" dominant-baseline="central" fill="#993C1D">Z-score (normal) / IQR (non-normal) · cap / remove</text>
+</g>
+<g class="cls-box cls-box-9">
+  <rect x="384" y="416" width="366" height="52" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text class="th" x="567" y="436" text-anchor="middle" dominant-baseline="central" fill="#4A1B0C">cat_summary()</text>
+  <text class="ts" x="567" y="454" text-anchor="middle" dominant-baseline="central" fill="#993C1D">value counts · ratios · bar charts</text>
+</g>
+
+<!-- ══════════════════════════════════════════════
+     Row 4 — TargetAnalyzer
+     ══════════════════════════════════════════════ -->
+<g class="cls-box cls-box-10">
+  <rect x="30" y="516" width="355" height="52" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text class="th" x="207" y="536" text-anchor="middle" dominant-baseline="central" fill="#042C53">target_summary_with_cat()</text>
+  <text class="ts" x="207" y="554" text-anchor="middle" dominant-baseline="central" fill="#185FA5">Chi-sq · Cramér's V · crosstab heatmap</text>
+</g>
+<g class="cls-box cls-box-11">
+  <rect x="403" y="516" width="347" height="52" rx="8" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+  <text class="th" x="576" y="536" text-anchor="middle" dominant-baseline="central" fill="#042C53">target_summary_with_num()</text>
+  <text class="ts" x="576" y="554" text-anchor="middle" dominant-baseline="central" fill="#185FA5">T-test / ANOVA / Kruskal / Pearson / Spearman</text>
+</g>
+
+<!-- ══════════════════════════════════════════════
+     Row 5 — Correlation + helpers.py
+     ══════════════════════════════════════════════ -->
+<g class="cls-box cls-box-12">
+  <rect x="30" y="616" width="355" height="52" rx="8" fill="#EDE6FB" stroke="#6B3FA0" stroke-width="0.5"/>
+  <text class="th" x="207" y="636" text-anchor="middle" dominant-baseline="central" fill="#2E1760">correlation_heatmap()</text>
+  <text class="ts" x="207" y="654" text-anchor="middle" dominant-baseline="central" fill="#6B3FA0">Pearson · Spearman · Kendall</text>
+</g>
+<g class="cls-box cls-box-13">
+  <rect x="403" y="610" width="347" height="64" rx="8" fill="#FFF8E1" stroke="#B8860B" stroke-width="0.5" stroke-dasharray="5 3"/>
+  <text class="th" x="576" y="628" text-anchor="middle" dominant-baseline="central" fill="#5C4000">helpers.py</text>
+  <text class="ts" x="576" y="644" text-anchor="middle" dominant-baseline="central" fill="#B8860B">get_groups() · select_group_test()</text>
+  <text class="ts" x="576" y="660" text-anchor="middle" dominant-baseline="central" fill="#B8860B">calculate_advanced_effect_size()</text>
+</g>
+
+<!-- ══════════════════════════════════════════════
+     Vertical flow connectors  (main spine — left side)
+     ══════════════════════════════════════════════ -->
+<!-- state → inspector -->
+<line class="flow-line fl-4" x1="135" y1="180" x2="135" y2="226" stroke="#ccc" stroke-width="0.7" fill="none" marker-end="url(#arr)"/>
+<line class="flow-line fl-4" x1="340" y1="180" x2="340" y2="226" stroke="#ccc" stroke-width="0.7" fill="none" marker-end="url(#arr)"/>
+<!-- inspector → normality -->
+<line class="flow-line fl-5" x1="135" y1="278" x2="135" y2="316" stroke="#BA7517" stroke-width="0.7" fill="none" marker-end="url(#arr-amber)"/>
+<!-- normality → outlier -->
+<line class="flow-line-amber fl-a2" x1="135" y1="368" x2="135" y2="416" stroke="#BA7517" stroke-width="0.7" fill="none" marker-end="url(#arr-amber)"/>
+<!-- outlier → target -->
+<line class="flow-line fl-6" x1="135" y1="468" x2="135" y2="516" stroke="#ccc" stroke-width="0.7" fill="none" marker-end="url(#arr)"/>
+<!-- target → correlation -->
+<line class="flow-line fl-7" x1="135" y1="568" x2="135" y2="616" stroke="#ccc" stroke-width="0.7" fill="none" marker-end="url(#arr)"/>
+
+<!-- helpers dependency arrows (dashed, from target rows) -->
+<line class="flow-line-amber fl-a3" x1="750" y1="568" x2="750" y2="616" stroke="#B8860B" stroke-width="0.7" stroke-dasharray="4 3" fill="none" marker-end="url(#arr-amber)"/>
+
+<!-- ══════════════════════════════════════════════
+     Legend
+     ══════════════════════════════════════════════ -->
+<line x1="30" y1="690" x2="750" y2="690" stroke="#eee" stroke-width="0.5"/>
+<rect x="30"  y="700" width="10" height="10" rx="2" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text class="ts" x="46"  y="709" fill="#555">Inspector</text>
+<rect x="150" y="700" width="10" height="10" rx="2" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+<text class="ts" x="166" y="709" fill="#555">NormalityAnalyzer (required)</text>
+<rect x="380" y="700" width="10" height="10" rx="2" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<text class="ts" x="396" y="709" fill="#555">OutlierAnalyzer / CategoricalAnalyzer</text>
+<rect x="30"  y="720" width="10" height="10" rx="2" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.5"/>
+<text class="ts" x="46"  y="729" fill="#555">TargetAnalyzer</text>
+<rect x="180" y="720" width="10" height="10" rx="2" fill="#EDE6FB" stroke="#6B3FA0" stroke-width="0.5"/>
+<text class="ts" x="196" y="729" fill="#555">Correlation</text>
+<rect x="310" y="720" width="10" height="10" rx="2" fill="#FFF8E1" stroke="#B8860B" stroke-width="0.5"/>
+<text class="ts" x="326" y="729" fill="#555">helpers.py (shared dependency)</text>
+
+</svg>

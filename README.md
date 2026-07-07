@@ -2,6 +2,11 @@
 
 A small production-style ML platform: Dockerized MySQL for storage, a reusable preprocessing/training pipeline built around scikit-learn's `Pipeline` API, an Optuna-tuned voting ensemble, a FastAPI service for inference, and a Streamlit client that talks to it over HTTP. The classification task itself — predicting whether someone earns above $50K from census attributes — is almost incidental; it's the vehicle for building out the surrounding infrastructure: a database layer, a packaged training pipeline, a served model, and a client, wired together the way you'd actually ship this rather than the way you'd leave it in a notebook.
 
+| Service | URL |
+|---|---|
+| Streamlit | https://elvin-aliyev-census-income-streamlit.hf.space |
+| FastAPI | https://elvin-aliyev-census-income-api.hf.space/predict |
+
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
@@ -31,7 +36,7 @@ Most public repos built around the Adult Census dataset stop at a notebook with 
 ## Engineering notes
 
 - **Modular by necessity, not convention.** `database.py`, `data_preprocessor.py`, `ml_pipeline.py`, `ml_utils.py`, and `optuna_config.py` each own one concern. `save_model.py` — the actual training entry point — is five lines because everything it calls already exists as a tested unit.
-- **`ML_Pipeline` and `DataBase_Manager` are classes, not scripts.** `ML_Pipeline.__init__` runs `prepare_data` and `build_model` up front, then exposes `train_model`, `evaluate`, and `save_model` as separate steps you can call independently — useful when you want to evaluate without immediately overwriting `model.pkl`.
+- **`ML_Pipeline` and `DataBase_Manager` are classes (OOP) , not scripts.** `ML_Pipeline.__init__` runs `prepare_data` and `build_model` up front, then exposes `train_model`, `evaluate`, and `save_model` as separate steps you can call independently — useful when you want to evaluate without immediately overwriting `model.pkl`.
 - **One preprocessing object, three consumers.** The same `preprocessing_pipeline` (`ColumnTransformer` + `RobustScaler`) is threaded through Optuna's objective function, the final training run, and the serialized model. There's no separate "training-time" and "inference-time" transform to keep in sync — the classic source of train/serve skew in ML systems.
 - **Config isn't scattered.** Hyperparameter search spaces and the final tuned values both live in `optuna_config.py`, so nothing about the model's configuration is hardcoded three files away from where it's used.
 - **Graceful degradation over hard dependency.** The FastAPI/MySQL fallback described above means the same image can run in a fully local Docker Compose setup or standalone on a platform with no database at all.
@@ -112,8 +117,7 @@ Accuracy 0.88, ROC-AUC 0.92. Class 1 metrics are weaker mainly because of class 
 .
 ├── database/
 │   ├── database.py            
-│   └── load_data.py         
-├── dataset/                   
+│   └── load_data.py                           
 ├── edatoolkit/
 │   └── edatoolkit            
 ├── fastapi_app/
@@ -129,7 +133,7 @@ Accuracy 0.88, ROC-AUC 0.92. Class 1 metrics are weaker mainly because of class 
 ├── workflow_diagram/
 │   └── ml_pipeline_workflow_.svg
 ├── .dockerignore
-├── .env
+├── .gitattributes
 ├── .gitignore
 ├── data_preprocessor.py
 ├── docker-compose.yaml
@@ -137,7 +141,6 @@ Accuracy 0.88, ROC-AUC 0.92. Class 1 metrics are weaker mainly because of class 
 ├── LICENSE
 ├── ml_pipeline.py
 ├── ml_utils.py
-├── model.pkl
 ├── optuna_config.py
 ├── README.md
 └── save_model.py
@@ -177,19 +180,15 @@ To retrain: `python save_model.py` — pulls `census_income` from MySQL, runs `M
 
 ## Live
 
-| Service | URL |
-|---|---|
-| Streamlit | https://elvin-aliyev-census-income-streamlit.hf.space |
-| FastAPI | https://elvin-aliyev-census-income-api.hf.space/predict |
 
 ## Stack
 
 **Language** Python
 **ML** scikit-learn, XGBoost, LightGBM, CatBoost (comparison only)
-**Data** Pandas, NumPy, SQLAlchemy
+**Data** Pandas, NumPy, Scipy, Seaborn, Matplotlib, SQLAlchemy
 **Explainability** SHAP
 **Tuning** Optuna
-**API** FastAPI, Pydantic, Uvicorn
+**API** FastAPI, Pydantic, Uvicorn, Requests
 **Frontend** Streamlit
 **Database** MySQL, PyMySQL
 **Infra** Docker, Docker Compose

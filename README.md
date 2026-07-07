@@ -1,6 +1,6 @@
 # income-ml-platform
 
-A small production-style ML platform: Dockerized MySQL for storage, a reusable preprocessing/training pipeline built around scikit-learn's `Pipeline` API, an Optuna-tuned voting ensemble, a FastAPI service for inference, and a Streamlit client that talks to it over HTTP. The classification task itself — predicting whether someone earns above $50K from census attributes — is almost incidental; it's the vehicle for building out the surrounding infrastructure: a database layer, a packaged training pipeline, a served model, and a client, wired together the way you'd actually ship this rather than the way you'd leave it in a notebook.
+A production-style ML platform built around the Adult Census dataset. Instead of relying on monolithic notebook scripts, this project implements a custom, modular Object-Oriented Programming (OOP) architecture. It features a dedicated database layer using Dockerized MySQL and SQLAlchemy, a custom-built modular ML pipeline class, a FastAPI service for inference, and a Streamlit client.
 
 | Service | URL |
 |---|---|

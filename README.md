@@ -177,8 +177,6 @@ By default it points at the hosted API on Hugging Face. Point `API_URL` in `stre
 
 To retrain: `python save_model.py` — pulls `census_income` from MySQL, runs `ML_Pipeline`, prints a classification report, writes `model.pkl`.
 
-## Live
-
 
 ## Stack
 

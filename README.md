@@ -182,17 +182,17 @@ To retrain: `python save_model.py` — pulls `census_income` from MySQL, runs `M
 
 ## Stack
 
-**Language** Python
-**ML** scikit-learn, XGBoost, LightGBM, CatBoost (comparison only)
-**Data** Pandas, NumPy, Scipy, Seaborn, Matplotlib, SQLAlchemy
-**Explainability** SHAP
-**Tuning** Optuna
-**API** FastAPI, Pydantic, Uvicorn, Requests
-**Frontend** Streamlit
-**Database** MySQL, PyMySQL
-**Infra** Docker, Docker Compose
-**Deployment** Hugging Face Spaces
-**Tooling** Jupyter, python-dotenv, Joblib
+* **Language:** Python
+* **ML:** scikit-learn, XGBoost, LightGBM, CatBoost (comparison only)
+* **Data:** Pandas, NumPy, Scipy, Seaborn, Matplotlib, SQLAlchemy
+* **Explainability:** SHAP
+* **Tuning:** Optuna
+* **API:** FastAPI, Pydantic, Uvicorn, Requests
+* **Frontend:** Streamlit
+* **Database:** MySQL, PyMySQL
+* **Infra:** Docker, Docker Compose
+* **Deployment:** Hugging Face Spaces
+* **Tooling:** Jupyter, python-dotenv, Joblib
 
 ## References
 

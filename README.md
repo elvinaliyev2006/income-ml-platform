@@ -44,7 +44,7 @@ Most public repos stop at a notebook `.fit()` call and an accuracy score. This p
 
 ### Exploratory analysis
 
-`eda.ipynb` runs on `edatoolkit`'s `Inspector` class from the start — it separates columns into categorical, numerical, and high-cardinality ("categorical but cardinal") groups automatically, which is what later drives which encoder each column gets. The initial pass already flags data quality problems worth acting on: 15 columns, north of 32,000 rows, a handful of exact duplicates, and — after cross-checking `education` against `education.num` — full agreement between the two, which is what confirms `education.num` is safe to drop as a redundant encoding rather than something that might carry extra signal.
+`eda.ipynb` runs on `edatoolkit`— (my own OOP-based EDA package) 's `Inspector` class from the start — it separates columns into categorical, numerical, and high-cardinality ("categorical but cardinal") groups automatically, which is what later drives which encoder each column gets. The initial pass already flags data quality problems worth acting on: 15 columns, north of 32,000 rows, a handful of exact duplicates, and — after cross-checking `education` against `education.num` — full agreement between the two, which is what confirms `education.num` is safe to drop as a redundant encoding rather than something that might carry extra signal.
 
 Two statistical tools do most of the work in deciding what matters:
 
@@ -182,7 +182,7 @@ To retrain: `python save_model.py` — pulls `census_income` from MySQL, runs `M
 
 * **Language:** Python
 * **ML:** scikit-learn, XGBoost, LightGBM, CatBoost (comparison only)
-* **Data:** Pandas, NumPy, Scipy, Seaborn, Matplotlib, SQLAlchemy
+* **Data:** edatoolkit (self-authored EDA package), Pandas, NumPy, Scipy, Seaborn, Matplotlib, SQLAlchemy
 * **Explainability:** SHAP
 * **Tuning:** Optuna
 * **API:** FastAPI, Pydantic, Uvicorn, Requests

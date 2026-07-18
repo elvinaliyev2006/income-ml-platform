@@ -258,7 +258,7 @@ text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-
 <text x="1250.0" y="751.0" font-size="9.5" text-anchor="middle" fill="#5F5E5A">README &#183; LICENSE &#183; pipeline</text>
 </g>
 <line x1="1250.0" y1="686" x2="1250.0" y2="708" stroke="#5F5E5A" stroke-width="1.1" stroke-dasharray="5 5" marker-end="url(#arr-slate)" class="flow-line" style="animation-delay:2.475s;"/>
-<path d="M 1250.0 472 L 1250.0 488 L 200.0 488 L 200.0 558" fill="none" stroke="#9aa0a6" stroke-width="1.4" stroke-dasharray="7 6" marker-end="url(#arr-main)" class="flow-line" style="animation-delay:0.720s;"/>
+<path d="M 1250.0 384 L 1250.0 488 L 200.0 488 L 200.0 558" fill="none" stroke="#9aa0a6" stroke-width="1.4" stroke-dasharray="7 6" marker-end="url(#arr-main)" class="flow-line" style="animation-delay:0.720s;"/>
 <text x="725.0" y="480" font-size="9.5" text-anchor="middle" fill="#8a8f98">continues below</text>
 <path d="M 436 560 Q 375.0 540 314 560" fill="none" stroke="#6B3FA0" stroke-width="1.3" stroke-dasharray="6 5" marker-end="url(#arr-violet)" class="flow-curve" style="animation-delay:1.2s;"/>
 <text x="375.0" y="534" font-size="9.5" text-anchor="middle" fill="#6B3FA0">JSON response</text>
